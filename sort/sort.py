@@ -1,4 +1,4 @@
-def sort(input):
+def insertion(input):
     output = []
     for item in input:
         for index in range(0, len(output)):
