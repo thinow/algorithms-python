@@ -1,4 +1,6 @@
+import os
 import unittest
-import sort.test_insertion
-suite = unittest.TestLoader().loadTestsFromModule(sort.test_insertion)
+
+start_dir = os.path.dirname(__file__)
+suite = unittest.TestLoader().discover(start_dir)
 unittest.TextTestRunner().run(suite)
