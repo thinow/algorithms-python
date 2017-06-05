@@ -3,6 +3,7 @@ from copy import copy
 
 from sort import sort
 
+
 class Generator:
     def __init__(self, assertions):
         self.assertions = assertions
@@ -19,6 +20,27 @@ class Generator:
 class TestSort(unittest.TestCase):
     def setUp(self):
         self.generator = Generator(self)
+
+    def test_empty(self):
+        self.generator.try_with(
+            algorithm=sort.insertion,
+            input=[],
+            expected=[]
+        )
+
+    def test_single_value(self):
+        self.generator.try_with(
+            algorithm=sort.insertion,
+            input=[1],
+            expected=[1]
+        )
+
+    def test_two_values(self):
+        self.generator.try_with(
+            algorithm=sort.insertion,
+            input=[1, 2],
+            expected=[1, 2]
+        )
 
     def test_insertion(self):
         self.generator.try_with(
