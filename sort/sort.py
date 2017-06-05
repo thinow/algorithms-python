@@ -1,10 +1,11 @@
-def insertion(input):
-    output = []
-    for item in input:
-        for index in range(0, len(output)):
-            if item < output[index]:
-                output.insert(index, item)
-                break
-        else:
-            output.append(item)
-    return output
+def insertion(array):
+    for index in range(1, len(array)):
+
+        value = array[index]
+        position = index
+
+        while position > 0 and array[position - 1] > value:
+            array[position] = array[position - 1]
+            position = position - 1
+
+        array[position] = value
