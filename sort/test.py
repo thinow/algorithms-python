@@ -29,3 +29,6 @@ class TestSort(unittest.TestCase):
 
     def test_selection(self):
         self.generator.try_with(sort.selection, INPUT, OUTPUT)
+
+    def test_bubble(self):
+        self.generator.try_with(sort.bubble, INPUT, OUTPUT)
