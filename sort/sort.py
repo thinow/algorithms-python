@@ -1,18 +1,14 @@
-def insertion(array):
-    for index in range(1, len(array)):
-
-        value = array[index]
-        position = index
-
-        while position > 0 and array[position - 1] > value:
-            array[position] = array[position - 1]
-            position -= 1
-
-        array[position] = value
-
-
 def swap(array, i, j):
     array[i], array[j] = array[j], array[i]
+
+
+def insertion(array):
+    for index in range(1, len(array)):
+        position = index
+
+        while position > 0 and array[position - 1] > array[position]:
+            swap(array, position - 1, position)
+            position -= 1
 
 
 def selection(array):
