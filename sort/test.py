@@ -21,9 +21,6 @@ class Generator:
 
 
 class TestSort(unittest.TestCase):
-    def test_insertion(self):
-        Generator(self).try_with(sort.insertion, INPUT, OUTPUT)
-
     def test_selection(self):
         Generator(self).try_with(sort.selection, INPUT, OUTPUT)
 
