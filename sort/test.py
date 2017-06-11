@@ -8,7 +8,7 @@ OUTPUT = [8, 31, 32, 43, 49, 64, 71, 74, 79, 81]
 
 
 class Generator:
-    def __init__(self, assertions):
+    def __init__(self, assertions: unittest.TestCase):
         self.assertions = assertions
 
     def try_with(self, algorithm, input, expected):
@@ -21,17 +21,14 @@ class Generator:
 
 
 class TestSort(unittest.TestCase):
-    def setUp(self):
-        self.generator = Generator(self)
-
     def test_insertion(self):
-        self.generator.try_with(sort.insertion, INPUT, OUTPUT)
+        Generator(self).try_with(sort.insertion, INPUT, OUTPUT)
 
     def test_selection(self):
-        self.generator.try_with(sort.selection, INPUT, OUTPUT)
+        Generator(self).try_with(sort.selection, INPUT, OUTPUT)
 
     def test_bubble(self):
-        self.generator.try_with(sort.bubble, INPUT, OUTPUT)
+        Generator(self).try_with(sort.bubble, INPUT, OUTPUT)
 
     def test_shell(self):
-        self.generator.try_with(sort.shell, INPUT, OUTPUT)
+        Generator(self).try_with(sort.shell, INPUT, OUTPUT)
