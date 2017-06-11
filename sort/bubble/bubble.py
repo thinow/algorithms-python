@@ -1,7 +1,7 @@
 from sort.core import swap
 
 
-def bubble(array):
+def sort_bubble(array):
     # range = from [length -1] to [1]
     for limit in range(len(array) - 1, 1, -1):
         for index in range(0, limit):

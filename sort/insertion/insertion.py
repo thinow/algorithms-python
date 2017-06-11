@@ -1,7 +1,7 @@
 from sort.core import swap
 
 
-def insertion(array):
+def sort_insertion(array):
     for index in range(1, len(array)):
         position = index
 

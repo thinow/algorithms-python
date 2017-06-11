@@ -1,7 +1,7 @@
 from sort.core import swap
 
 
-def selection(array):
+def sort_selection(array):
     for index in range(0, len(array)):
 
         index_min = index
