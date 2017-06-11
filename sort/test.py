@@ -32,3 +32,6 @@ class TestSort(unittest.TestCase):
 
     def test_bubble(self):
         self.generator.try_with(sort.bubble, INPUT, OUTPUT)
+
+    def test_shell(self):
+        self.generator.try_with(sort.shell, INPUT, OUTPUT)
