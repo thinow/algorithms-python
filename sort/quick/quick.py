@@ -1,10 +1,7 @@
 from sort.core import swap
 
 
-def recursive_sort(array, start, end):
-    if end - start <= 1:
-        return
-
+def partition(array, start, end):
     pivot = start
 
     for evaluated in range(start + 1, end):
@@ -12,6 +9,16 @@ def recursive_sort(array, start, end):
             swap(array, pivot + 1, evaluated)
             swap(array, pivot + 1, pivot)
             pivot += 1
+
+    return pivot
+
+
+def recursive_sort(array, start, end):
+    # length of the sub-array
+    if end - start <= 1:
+        return
+
+    pivot = partition(array, start, end)
 
     recursive_sort(array, start, pivot)
     recursive_sort(array, pivot + 1, end)
